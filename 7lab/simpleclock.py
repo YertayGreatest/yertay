@@ -1,5 +1,6 @@
 import pygame
 import sys
+import datetime
 
 pygame.init()
 width = 800
@@ -7,6 +8,10 @@ height = 600
 screen = pygame.display.set_mode((width, height))
 pygame.display.set_caption('mickey clock')
 run = True
+
+current_time = datetime.datetime.now().time()
+minute = current_time.minute
+second = current_time.second
 
 bg_mickey = pygame.image.load('mainclock.png').convert()
 
@@ -20,7 +25,7 @@ right_arm_rect = right_arm.get_rect()
 right_arm_rect.bottom = 610
 right_arm_rect.centerx = 400
 right_rotation_speed = -0.1
-angle_right = 0
+angle_right = -(minute * 6) - 36
 
 
 
@@ -33,7 +38,7 @@ left_arm_rect.bottom = 610
 left_arm_rect.centerx = 400
 clock = pygame.time.Clock()
 left_rotation_speed = -6
-angle_left = 0
+angle_left = -(second * 6) 
 
 
 
@@ -47,6 +52,7 @@ while run:
         if event.type == pygame.QUIT:
             run = False
     screen.blit(bg_mickey,(0, 0))
+    
     
     
     #LEFT ARM
