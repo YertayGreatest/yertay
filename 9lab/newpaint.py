@@ -38,6 +38,7 @@ def menucircle():
 menucirc = pygame.Rect(185, 35, 75, 75)
 circles = []
 circle_drawing = False
+
 #colors
 def color_pallete():
     red_square = pygame.draw.rect(screen,'red', [s_width - 40, 10, 30, 30])
