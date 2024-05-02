@@ -1,4 +1,5 @@
 import pygame, sys, random, pygame_gui
+
 pygame.init()
 s_w, s_h = 800, 800
 block_size = 50
@@ -9,6 +10,9 @@ clock = pygame.time.Clock()
 fps = 7
 
 menu_flag = True
+
+
+
 
 
 
